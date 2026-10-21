@@ -1,0 +1,21 @@
+{
+    "applicationId": "YOUR_APPLICATION_ID",
+    "presence": {
+        "details": "PRESENCE DETAILS",
+        "state": "PRESENCE STATE",
+        "largeImageKey": "logo",
+        "largeImageText": "PresenceJS",
+        "smallImageKey": "avatar",
+        "smallImageText": "Online"
+    },
+    "timer": {
+        "enabled": true,
+        "mode": "accumulated",
+        "totalSeconds": 0
+    },
+    "settings": {
+        "autoReconnect": true,
+        "reconnectInterval": 5000,
+        "saveInterval": 10000
+    }
+}
