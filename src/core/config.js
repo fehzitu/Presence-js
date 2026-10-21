@@ -9,7 +9,7 @@ function loadConfig() {
     if (!fs.existsSync(CONFIG_PATH)) {
         throw new Error("Configuration file not found: ${CONFIG_PATH}");
     };
-    
+
     try {
         const fileContent = fs.readFileSync(CONFIG_PATH, 'utf8');
         config = JSON.parse(fileContent);
