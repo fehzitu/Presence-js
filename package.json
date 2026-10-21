@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/fehzitu/Presence-Js/issues"
   },
-  "homepage": "https://github.com/fehzitu/Presence-Js#readme"
+  "homepage": "https://github.com/fehzitu/Presence-Js#readme",
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.5.1"
+  }
 }
