@@ -1,8 +1,8 @@
-## PresenceJS 🎮
+## Presence-js 🎮
 A customizable Discord Rich Presence manager built with JavaScript. Configure your activity, manage accumulated time, and preserve your presence settings across sessions.
 
 ## About 📖
-PresenceJS is an experimental project designed to make Discord Rich Presence customizable and persistent.
+Presence-js is an experimental project designed to make Discord Rich Presence customizable and persistent.
 
 The goal is to create a lightweight application that reads activity settings from a JSON file, manages accumulated session time, and automatically restores the previous state when the Discord client becomes available again.
 
@@ -23,7 +23,7 @@ The project is being developed with a shared JavaScript core and platform-specif
 «Note: Features are under development. Rich Presence publication depends on a supported Discord integration. The desktop RPC interface is not automatically available to the Android Discord client.»
 
 ## Technologies 🛠️
-- JavaScript
+- Javascript
 - Node.js
 - Discord RPC
 - JSON
@@ -31,7 +31,7 @@ The project is being developed with a shared JavaScript core and platform-specif
 
 ## Project Structure 📂
 ```text
-PresenceJS/
+Presence-js/
 ├── src/
 │   ├── core/
 │   │   ├── timer.js
@@ -50,7 +50,7 @@ PresenceJS/
 ```
 
 ## How It Works 🔍
-PresenceJS is designed around a shared core and platform-specific integrations.
+Presence-js is designed around a shared core and platform-specific integrations.
 
 1. Load activity settings from a JSON configuration file.
 2. Restore the previously accumulated session time.
@@ -83,22 +83,22 @@ The configuration format will evolve as development progresses.
 - A Discord application created through the "Discord Developer Portal" (https://discord.com/developers/applications)
 
 ## Installation
+```shell
 git clone [repo-link]
 cd [repo-name]
 npm install
+```
 
 ## Running the Project
 Startup commands and configuration instructions will be added as the initial implementation becomes available.
 
 ## Platform Support 💻
-Windows| Planned
-Linux| Planned
-Android / Termux
+Windows | Linux | Android (Termux)
 
 The core logic is intended to be shared across platforms, while operating-system-specific functionality will be implemented in separate modules.
 
 ## Project Goals 🎯
-- Learn and apply JavaScript and Node.js concepts.
+- Learn and apply Javascript and Node.js concepts.
 - Understand Discord Rich Presence integration.
 - Implement persistent application state.
 - Practice modular software architecture.
@@ -107,11 +107,11 @@ The core logic is intended to be shared across platforms, while operating-system
 - Build a maintainable and extensible open-source project.
 
 ## Limitations ⚠️
-PresenceJS will rely on supported Discord integrations and the capabilities available on each platform.
+Presence-js will rely on supported Discord integrations and the capabilities available on each platform.
 
 The desktop RPC interface requires a compatible Discord desktop client. Running the application in Termux does not, by itself, enable Rich Presence publication through the Android Discord client.
 
-PresenceJS will not use self-bots or unauthorized automation of Discord user accounts.
+Presence-js will not use self-bots or unauthorized automation of Discord user accounts.
 
 ## License 📄
 This project is licensed under the MIT License. See the "LICENSE" file for details.
