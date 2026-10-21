@@ -1,7 +1,4 @@
 function createTimer(timerState) {
-    let totalSeconds = timerState.totalSeconds;
-    let startedAt = null;
-    
     if (!timerState || typeof timerState !== 'object') {
         throw new TypeError('A valid timer state is required.');
     };
@@ -10,12 +7,11 @@ function createTimer(timerState) {
         throw new Error('totalSeconds must be a non-negative number.');
     };
     
-    function startTimer() {
-        if (startedAt !== null) {
-            return;
-        };
+    let totalSeconds = timerState.totalSeconds;
+    let startedAt = null;
     
-        if (timerState.enabled === false) {
+    function startTimer() {
+        if (startedAt !== null || timerState.enabled === false) {
             return;
         };
     
@@ -49,10 +45,10 @@ function createTimer(timerState) {
     
     function getState() {
         return {
-            enabled: timerState.enabled !== false,
-            mode: timerState.mode,
+            ...timerState,
             totalSeconds: getElapsedTime(),
-            running: startedAt !== null
+            running: startedAt !== null,
+            startedAt
         };
     };
     
