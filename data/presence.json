@@ -11,13 +11,13 @@
     "timer": {
         "enabled": true,
         "mode": "accumulated",
-        "totalSeconds": 0
+        "totalSeconds": 0,
+        "running": false,
+        "startedAt": null
     },
     "settings": {
         "autoReconnect": true,
         "reconnectInterval": 5000,
-        "saveInterval": 10000,
-        "running": false,
-        "startedAt": null
+        "saveInterval": 10000
     }
 }
