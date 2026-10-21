@@ -6,21 +6,26 @@ try {
     const timer = createTimer(data.timer);
 
     console.log('[PresenceJS] Timer loaded');
-    console.log('Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
+    console.log('[PresenceJS] Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
 
     timer.startTimer();
 
     console.log('[PresenceJS] Timer started');
 
     setTimeout(() => {
-        timer.pauseTimer();
-        data.timer = timer.getState();
+        try {
+            timer.pauseTimer();
+            data.timer = timer.getState();
 
-        saveData(data);
+            saveData(data);
 
-        console.log('[PresenceJS] Timer paused');
-        console.log('[PresenceJS] Data saved successfully');
-        console.log('[PresenceJS] Saved total:', data.timer.totalSeconds.toFixed(2), 'seconds');
+            console.log('[PresenceJS] Timer paused.');
+            console.log('[PresenceJS] Data saved successfully.');
+            console.log('[PresenceJS] Saved total:', data.timer.totalSeconds.toFixed(2), 'seconds');
+        } catch (error) {
+            console.error(`[PresenceJS] ${error.message}`);
+            process.exitCode = 1;
+        };
     }, 3000);
 } catch (error) {
     console.error(`[PresenceJS] ${error.message}`);
