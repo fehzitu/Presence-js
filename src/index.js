@@ -5,12 +5,12 @@ try {
     const data = loadData();
     const timer = createTimer(data.timer);
 
-    console.log('[PresenceJS] Timer loaded');
-    console.log('[PresenceJS] Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
+    console.log('[Presence-js] Timer loaded');
+    console.log('[Presence-js] Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
 
     timer.startTimer();
 
-    console.log('[PresenceJS] Timer started');
+    console.log('[Presence-js] Timer started');
 
     setTimeout(() => {
         try {
@@ -19,15 +19,15 @@ try {
 
             saveData(data);
 
-            console.log('[PresenceJS] Timer paused.');
-            console.log('[PresenceJS] Data saved successfully.');
-            console.log('[PresenceJS] Saved total:', data.timer.totalSeconds.toFixed(2), 'seconds');
+            console.log('[Presence-js] Timer paused.');
+            console.log('[Presence-js] Data saved successfully.');
+            console.log('[Presence-js] Saved total:', data.timer.totalSeconds.toFixed(2), 'seconds');
         } catch (error) {
-            console.error(`[PresenceJS] ${error.message}`);
+            console.error(`[Presence-js] ${error.message}`);
             process.exitCode = 1;
         };
     }, 3000);
 } catch (error) {
-    console.error(`[PresenceJS] ${error.message}`);
+    console.error(`[Presence-js] ${error.message}`);
     process.exitCode = 1;
 };
