@@ -16,6 +16,8 @@
     "settings": {
         "autoReconnect": true,
         "reconnectInterval": 5000,
-        "saveInterval": 10000
+        "saveInterval": 10000,
+        "running": false,
+        "startedAt": null
     }
 }
