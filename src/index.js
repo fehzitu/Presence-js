@@ -1,33 +1,46 @@
 const { loadData, saveData } = require('./core/storage');
 const { createTimer } = require('./core/timer');
+const { connectPresence } = require('./presence/rpc');
 
-try {
-    const data = loadData();
-    const timer = createTimer(data.timer);
+async function main() {
+    let client;
 
-    console.log('[Presence-js] Timer loaded');
-    console.log('[Presence-js] Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
+    try {
+        const data = loadData();
+        const timer = createTimer(data.timer);
 
-    timer.startTimer();
+        console.log('[Presence-js] Timer loaded');
+        console.log('Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
 
-    console.log('[Presence-js] Timer started');
+        client = connectPresence();
 
-    setTimeout(() => {
-        try {
-            timer.pauseTimer();
-            data.timer = timer.getState();
+        timer.startTimer();
 
-            saveData(data);
+        console.log('[Presence-js] Timer started');
 
-            console.log('[Presence-js] Timer paused.');
-            console.log('[Presence-js] Data saved successfully.');
-            console.log('[Presence-js] Saved total:', data.timer.totalSeconds.toFixed(2), 'seconds');
-        } catch (error) {
-            console.error(`[Presence-js] ${error.message}`);
-            process.exitCode = 1;
+        setTimeout(() => {
+            try {
+                timer.pauseTimer();
+
+                data.timer = timer.getState();
+                saveData(data);
+
+                console.log('[Presence-js] Timer paused');
+                console.log('[Presence-js] Data saved successfully');
+                console.log('[Presence-js] Saved total:', data.timer.totalSeconds.toFixed(2), 'seconds');
+            } catch (error) {
+                console.error(`[PresenceJS] ${error.message}`);
+                process.exitCode = 1;
+            };
+        }, 3000);
+    } catch (error) {
+        console.error(`[PresenceJS] ${error.message}`);
+        process.exitCode = 1;
+
+        if (client) {
+            client.destroy();
         };
-    }, 3000);
-} catch (error) {
-    console.error(`[Presence-js] ${error.message}`);
-    process.exitCode = 1;
+    };
 };
+
+main();
