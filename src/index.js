@@ -15,7 +15,7 @@ async function shutdown(signal) {
 
     shuttingDown = true;
 
-    console.log(`\n[Presence-js] Received ${signal}`);
+    console.log(`[Presence-js] Received ${signal}`);
     console.log('[Presence-js] Shutting down');
 
     try {

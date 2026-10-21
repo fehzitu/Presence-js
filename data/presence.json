@@ -1,12 +1,12 @@
 {
   "applicationId": "YOUR_APPLICATION_ID",
   "presence": {
-    "details": "Fehzitu Dev",
-    "state": "PRESENCE STATE",
-    "largeImageKey": "logo",
-    "largeImageText": "PresenceJS",
-    "smallImageKey": "avatar",
-    "smallImageText": "Online"
+    "details": "First title",
+    "state": "Second title",
+    "largeImageKey": "largeImageKey",
+    "largeImageText": "largeImageText",
+    "smallImageKey": "smallImageKey",
+    "smallImageText": "smallImageText"
   },
   "timer": {
     "enabled": true,
