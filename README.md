@@ -34,16 +34,12 @@ The project is being developed with a shared JavaScript core and platform-specif
 PresenceJS/
 ├── src/
 │   ├── core/
-│   │   ├── presence.js
 │   │   ├── timer.js
 │   │   ├── storage.js
 │   │   └── config.js
-│   ├── rpc/
-│   │   └── discord-rpc.js
-│   ├── platforms/
-│   │   ├── windows.js
-│   │   ├── linux.js
-│   │   └── android.js
+│   ├── presence/
+│   │   ├── activity.js
+│   │   └── rpc.js
 │   └── index.js
 ├── data/
 │   └── presence.json
