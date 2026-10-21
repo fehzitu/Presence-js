@@ -65,7 +65,7 @@ async function main() {
         console.log('[Presence-js] Timer loaded.');
         console.log('[Presence-js] Previous total:', timer.getElapsedTime().toFixed(2), 'seconds');
 
-        client = connectPresence();
+        client = connectPresence(data, timer);
 
         timer.startTimer();
 
